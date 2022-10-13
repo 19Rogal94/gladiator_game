@@ -1,6 +1,6 @@
-from class_gladiator import UserGladiator, OpponentGladiator
-from new_skills_function import new_skills_choice
-from fight_function import fight
+from main_folder.class_gladiator import UserGladiator, OpponentGladiator
+from main_folder.new_skills_function import new_skills_choice
+from main_folder.fight_function import fight
 
 
 def result_1_fight(result: str, gladiator: UserGladiator, opponent: OpponentGladiator):

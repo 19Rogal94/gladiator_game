@@ -1,5 +1,5 @@
 import math
-from equipment import *
+from main_folder import equipment
 
 
 class Gladiator:
@@ -22,16 +22,16 @@ class UserGladiator(Gladiator):
                          technik_long_distanse_fight, defence)
         self.username = username
         self.gold: int = 0
-        self.weapons_short_distance_warehouse = {"Pięści": piesci}
-        self.weapons_long_distance_warehouse = {"Kamienie": kamienie}
+        self.weapons_short_distance_warehouse = {"Pięści": equipment.piesci}
+        self.weapons_long_distance_warehouse = {"Kamienie": equipment.kamienie}
         self.helmet_warehouse = {}
         self.armor_warehouse = {}
         self.shield_warehouse = {}
-        self.weapons_short_distance_in_use = piesci
-        self.weapons_long_distance_in_use = kamienie
-        self.helmet_in_use = brak_helmu
-        self.armor_in_use = brak_zbroi
-        self.shield_in_use = brak_tarczy
+        self.weapons_short_distance_in_use = equipment.piesci
+        self.weapons_long_distance_in_use = equipment.kamienie
+        self.helmet_in_use = equipment.brak_helmu
+        self.armor_in_use = equipment.brak_zbroi
+        self.shield_in_use = equipment.brak_tarczy
 
     def gladiator_skills(self):
         print(f"{self.username}, Twoje umiejętności wyglądają następująco: \nSiła: {self.strenght} \n"

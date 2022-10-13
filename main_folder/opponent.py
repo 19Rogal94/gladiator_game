@@ -1,4 +1,4 @@
-from class_gladiator import OpponentGladiator
+from main_folder.class_gladiator import OpponentGladiator
 
 level_1_opponent = OpponentGladiator(2, 1, 2, 2, 3, 2)
 

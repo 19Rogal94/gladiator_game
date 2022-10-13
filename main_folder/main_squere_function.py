@@ -1,8 +1,8 @@
 import random
-import equipment
-from new_skills_function import new_skills_choice
-from class_gladiator import UserGladiator, OpponentGladiator
-from fight_function import fight
+import main_folder.equipment
+from main_folder.new_skills_function import new_skills_choice
+from main_folder.class_gladiator import UserGladiator, OpponentGladiator
+from main_folder.fight_function import fight
 
 
 def verification_short_distance_weapon(equipment_list, action: str, gladiator: UserGladiator):
@@ -80,7 +80,7 @@ def weapon_shop(gladiator: UserGladiator):
         if weapon_shop_action_1 == "1":
             while True:
                 print(f"Oto dostępna broń krótkodystansowa:\n")
-                for arg in equipment.weapon_short_distance_list:
+                for arg in main_folder.equipment.weapon_short_distance_list:
                     print(f"{arg.name} \t-\t siła: {arg.strenght} \t-\t wytrzymałość: {arg.stamina} \t-\t "
                           f"cena: {arg.price}")
                 print(f"cofnij - wróć do sklepu\n")
@@ -89,19 +89,19 @@ def weapon_shop(gladiator: UserGladiator):
 
                 if weapon_shop_action_2 == "Cofnij":
                     break
-                elif not verification_equipment_in_list(equipment_list=equipment.weapon_short_distance_list,
+                elif not verification_equipment_in_list(equipment_list=main_folder.equipment.weapon_short_distance_list,
                                                         action=weapon_shop_action_2):
                     print(f"Podałeś niepoprawną nazwę przedmiotu!\n")
                     continue
                 else:
-                    verification_short_distance_weapon(equipment_list=equipment.weapon_short_distance_list,
+                    verification_short_distance_weapon(equipment_list=main_folder.equipment.weapon_short_distance_list,
                                                        action=weapon_shop_action_2, gladiator=gladiator)
                     continue
 
         elif weapon_shop_action_1 == "2":
             print(f"Oto dostępna broń długodystansowa:\n")
             while True:
-                for arg in equipment.weapon_long_distance_list:
+                for arg in main_folder.equipment.weapon_long_distance_list:
                     print(f"{arg.name} \t-\t siła: {arg.strenght} \t-\t wytrzymałość: {arg.stamina} \t-\t "
                           f"cena: {arg.price}")
                 print(f"cofnij - wróć do sklepu\n")
@@ -109,12 +109,12 @@ def weapon_shop(gladiator: UserGladiator):
                 print()
                 if weapon_shop_action_2 == "Cofnij":
                     break
-                elif not verification_equipment_in_list(equipment_list=equipment.weapon_long_distance_list,
+                elif not verification_equipment_in_list(equipment_list=main_folder.equipment.weapon_long_distance_list,
                                                         action=weapon_shop_action_2):
                     print(f"Podałeś niepoprawną nazwę przedmiotu!\n")
                     continue
                 else:
-                    verification_long_distance_weapon(equipment_list=equipment.weapon_long_distance_list,
+                    verification_long_distance_weapon(equipment_list=main_folder.equipment.weapon_long_distance_list,
                                                       action=weapon_shop_action_2, gladiator=gladiator)
                     continue
 
@@ -136,7 +136,7 @@ def armor_shop(gladiator: UserGladiator):
         if armament_shop_action_1 == "1":
             while True:
                 print(f"Oto dostępna lista hełmów:\n")
-                for arg in equipment.helmet_list:
+                for arg in main_folder.equipment.helmet_list:
                     print(f"{arg.name} \t-\t defensywa: {arg.defence} \t-\t wytrzymałość: "
                           f"{arg.stamina} \t-\t cena: {arg.price}")
                 print(f"cofnij - wróć do sklepu\n")
@@ -145,18 +145,18 @@ def armor_shop(gladiator: UserGladiator):
 
                 if armament_shop_action_2 == "Cofnij":
                     break
-                elif not verification_equipment_in_list(equipment_list=equipment.helmet_list,
+                elif not verification_equipment_in_list(equipment_list=main_folder.equipment.helmet_list,
                                                         action=armament_shop_action_2):
                     print(f"Podałeś niepoprawną nazwę przedmiotu!\n")
                     continue
                 else:
-                    verification_helmet_list(equipment_list=equipment.helmet_list, action=armament_shop_action_2,
-                                             gladiator=gladiator)
+                    verification_helmet_list(equipment_list=main_folder.equipment.helmet_list,
+                                             action=armament_shop_action_2, gladiator=gladiator)
 
         elif armament_shop_action_1 == "2":
             while True:
                 print(f"Oto dostępna lista zbroi:\n")
-                for arg in equipment.armor_list:
+                for arg in main_folder.equipment.armor_list:
                     print(f"{arg.name} \t-\t defensywa: {arg.defence} \t-\t wytrzymałość: "
                           f"{arg.stamina} \t-\t cena: {arg.price}")
                 print(f"cofnij - wróć do sklepu\n")
@@ -165,18 +165,18 @@ def armor_shop(gladiator: UserGladiator):
 
                 if armament_shop_action_2 == "Cofnij":
                     break
-                elif not verification_equipment_in_list(equipment_list=equipment.armor_list,
+                elif not verification_equipment_in_list(equipment_list=main_folder.equipment.armor_list,
                                                         action=armament_shop_action_2):
                     print(f"Podałeś niepoprawną nazwę przedmiotu!\n")
                     continue
                 else:
-                    verification_armor_list(equipment_list=equipment.armor_list, action=armament_shop_action_2,
-                                            gladiator=gladiator)
+                    verification_armor_list(equipment_list=main_folder.equipment.armor_list,
+                                            action=armament_shop_action_2, gladiator=gladiator)
 
         elif armament_shop_action_1 == "3":
             while True:
                 print(f"Oto dostępna lista tarcz:\n")
-                for arg in equipment.shield_list:
+                for arg in main_folder.equipment.shield_list:
                     print(f"{arg.name} \t-\t defensywa: {arg.defence} \t-\t wytrzymałość: "
                           f"{arg.stamina} \t-\t cena: {arg.price}")
                 print(f"cofnij - wróć do sklepu\n")
@@ -185,13 +185,13 @@ def armor_shop(gladiator: UserGladiator):
 
                 if armament_shop_action_2 == "Cofnij":
                     break
-                elif not verification_equipment_in_list(equipment_list=equipment.shield_list,
+                elif not verification_equipment_in_list(equipment_list=main_folder.equipment.shield_list,
                                                         action=armament_shop_action_2):
                     print(f"Podałeś niepoprawną nazwę przedmiotu!\n")
                     continue
                 else:
-                    verification_shield_list(equipment_list=equipment.shield_list, action=armament_shop_action_2,
-                                             gladiator=gladiator)
+                    verification_shield_list(equipment_list=main_folder.equipment.shield_list,
+                                             action=armament_shop_action_2, gladiator=gladiator)
 
         elif armament_shop_action_1 == "4":
             break
@@ -207,6 +207,7 @@ def training_with_personal_trainer(gladiator: UserGladiator):
     else:
         print(f"Wybrałeś trening z trenerem. Dostajesz za to dwie nowe umiejętności.")
         print()
+        gladiator.gold -= 200
         new_skill = 2
         new_skills_choice(skill_point=new_skill, gladiator=gladiator)
 

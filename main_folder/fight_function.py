@@ -1,4 +1,4 @@
-from class_gladiator import UserGladiator, OpponentGladiator
+from main_folder.class_gladiator import UserGladiator, OpponentGladiator
 import random
 
 
