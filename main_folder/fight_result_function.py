@@ -6,8 +6,8 @@ from main_folder.fight_function import fight
 def result_1_fight(result: str, gladiator: UserGladiator, opponent: OpponentGladiator):
     while True:
         if result == "Win":
-            print(f"Gratulacje! Dzięki wygranej wchodzisz w świat gladiatorów. W nagrodę za wygraną dostajesz "
-                  f"500 złotych monet. Dodatkowo masz do dyspozycji 3 nowych umiejętności do rozdysponowania")
+            print("Gratulacje! Dzięki wygranej wchodzisz w świat gladiatorów. W nagrodę za wygraną dostajesz "
+                  "500 złotych monet. Dodatkowo masz do dyspozycji 3 nowych umiejętności do rozdysponowania")
             gladiator.gold += 500
             new_skill = 3
             new_skills_choice(skill_point=new_skill, gladiator=gladiator)

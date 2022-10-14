@@ -9,7 +9,7 @@ def user_move_left(distance_list: list, gladiator: UserGladiator):
               f"pamiętaj się na przyszłość. Zmęczyłeś się tylko i tracisz kolejkę")
     else:
         distance_list[user_position - 1], distance_list[user_position] = "Y", "_"
-        print(f"Pomyślnie poruszyłeś się o 1 w lewo")
+        print("Pomyślnie poruszyłeś się o 1 w lewo")
 
 
 def user_move_right(distance_list: list, gladiator: UserGladiator):
@@ -20,7 +20,7 @@ def user_move_right(distance_list: list, gladiator: UserGladiator):
               f"pamiętaj się na przyszłość. Zmęczyłeś się tylko i tracisz kolejkę")
     else:
         distance_list[user_position + 1], distance_list[user_position] = "Y", "_"
-        print(f"Pomyślnie poruszyłeś się o 1 w prawo")
+        print("Pomyślnie poruszyłeś się o 1 w prawo")
 
 
 def opponent_move_left(distance_list: list):
@@ -30,7 +30,7 @@ def opponent_move_left(distance_list: list):
         print("Przeciwnika wpada na Ciebie. Nic się nie dzieje")
     else:
         distance_list[opponent_position - 1], distance_list[opponent_position] = "O", "_"
-        print(f"Przeciwnik poruszył się o 1 w lewo")
+        print("Przeciwnik poruszył się o 1 w lewo")
 
 
 def opponent_move_right(distance_list: list):
@@ -39,7 +39,7 @@ def opponent_move_right(distance_list: list):
         print("Przeciwnika wpada na bandę areny. Nic się nie dzieje")
     else:
         distance_list[opponent_position + 1], distance_list[opponent_position] = "O", "_"
-        print(f"Przeciwnik poruszył się o 1 w prawo")
+        print("Przeciwnik poruszył się o 1 w prawo")
 
 
 def opponent_tour(opponent: OpponentGladiator, distance_list, gladiator: UserGladiator):
@@ -47,21 +47,21 @@ def opponent_tour(opponent: OpponentGladiator, distance_list, gladiator: UserGla
     if opponent_choice == 1:
         if opponent.stamina_in_fight < 10:
             opponent.stamina_in_fight += 30
-            print(f"Przeciwnik odpoczywa.")
+            print("Przeciwnik odpoczywa.")
         else:
             opponent_move_left(distance_list)
             opponent.stamina_in_fight -= 10
     elif opponent_choice == 2:
         if opponent.stamina_in_fight < 10:
             opponent.stamina_in_fight += 30
-            print(f"Przeciwnik odpoczywa.")
+            print("Przeciwnik odpoczywa.")
         else:
             opponent_move_right(distance_list)
             opponent.stamina_in_fight -= 10
     else:
         if opponent.stamina_in_fight < 10:
             opponent.stamina_in_fight += 30
-            print(f"Przeciwnik odpoczywa.")
+            print("Przeciwnik odpoczywa.")
         else:
             user_distance = distance_list.index("O") - distance_list.index("Y")
             attack_multiplier_op: float = random.randint(5, 15) / 10
@@ -99,17 +99,17 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator):
           f"{distance_list}")
 
     while True:
-        print(f"Wybierz działanie:\n"
-              f"1. Idź w lewo\n"
-              f"2. Idź w prawo\n"
-              f"3. Odpocznij i zyskaj 30 wytrzymałości\n"
-              f"4. Atakuj! (atak kosztuje 20 wytrzymałości\n")
+        print("Wybierz działanie:\n"
+              "1. Idź w lewo\n"
+              "2. Idź w prawo\n"
+              "3. Odpocznij i zyskaj 30 wytrzymałości\n"
+              "4. Atakuj! (atak kosztuje 20 wytrzymałości\n")
         user_action = input("Twój wybór:\n")
         print()
         if user_action == "1":
             if gladiator.stamina_in_fight < 10:
                 gladiator.stamina_in_fight += 30
-                print(f"Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
+                print("Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
             else:
                 user_move_left(distance_list, gladiator)
                 gladiator.stamina_in_fight -= 10
@@ -118,7 +118,7 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator):
         elif user_action == "2":
             if gladiator.stamina_in_fight < 10:
                 gladiator.stamina_in_fight += 30
-                print(f"Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
+                print("Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
             else:
                 user_move_right(distance_list, gladiator)
                 gladiator.stamina_in_fight -= 10
@@ -126,13 +126,13 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator):
 
         elif user_action == "3":
             gladiator.stamina_in_fight += 30
-            print(f"Odpoczywasz, wróć silniejszy!")
+            print("Odpoczywasz, wróć silniejszy!")
             opponent_tour(opponent=opponent, distance_list=distance_list, gladiator=gladiator)
 
         elif user_action == "4":
             if gladiator.stamina_in_fight < 20:
                 gladiator.stamina_in_fight += 30
-                print(f"Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
+                print("Nie masz siły się ruszyć! Odpoczywasz tę kolejkę!")
             else:
                 users_distance = distance_list.index("O") - distance_list.index("Y")
                 attack_multiplier: float = random.randint(5, 15) / 10
@@ -145,9 +145,9 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator):
 
                     if user_attack_chance >= opponent_defence:
                         opponent.health_in_fight -= gladiator.strenght_long * attack_multiplier
-                        print(f"Udany atak z dystansu!")
+                        print("Udany atak z dystansu!")
                     else:
-                        print(f"Przeciwnikowi udało się uniknąć ataku!")
+                        print("Przeciwnikowi udało się uniknąć ataku!")
 
                 else:
                     figth_user_variable = random.randint(1, 15)
@@ -157,14 +157,14 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator):
 
                     if user_attack_chance >= opponent_defence:
                         opponent.health_in_fight -= gladiator.strenght * attack_multiplier
-                        print(f"Udany atak!")
+                        print("Udany atak!")
                     else:
-                        print(f"Przeciwnikowi udało się uniknąć ataku!")
+                        print("Przeciwnikowi udało się uniknąć ataku!")
 
                 gladiator.stamina_in_fight -= 20
             opponent_tour(opponent=opponent, distance_list=distance_list, gladiator=gladiator)
         else:
-            print(f"Podałeś niepoprawną wartość. Wprowadź ponownie, tym razem poprawną wartość")
+            print("Podałeś niepoprawną wartość. Wprowadź ponownie, tym razem poprawną wartość")
             continue
 
         print("=" * 79)

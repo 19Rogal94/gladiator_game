@@ -56,11 +56,11 @@ class UserGladiator(Gladiator):
         while True:
             print(f"Znajdujesz się w magazynie broni krótkodystansowej. Obecnie w użyciu masz "
                   f"{self.weapons_short_distance_in_use.name}.\n")
-            print(f"Obecnie posiadasz następującą broń któtkodystansową w magazynie:")
+            print("Obecnie posiadasz następującą broń któtkodystansową w magazynie:")
             for arg in self.weapons_short_distance_warehouse.values():
                 print(f"{arg.name} - siła: {arg.strenght} - wytrzymałość: "
                       f"{arg.stamina} - cena: {arg.price}")
-            print(f"cofnij - wróć do menadżera postaci\n")
+            print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą broń chcesz założyć\n")
             print()
             if charakter_manager_2 in self.weapons_short_distance_warehouse.keys():
@@ -77,7 +77,7 @@ class UserGladiator(Gladiator):
             elif charakter_manager_2 == "cofnij":
                 break
             else:
-                print(f"Nie posiadasz takiej broni w magazynie")
+                print("Nie posiadasz takiej broni w magazynie")
                 continue
 
     def choice_long_distance_weapon(self):
@@ -85,11 +85,11 @@ class UserGladiator(Gladiator):
             print(
                 f"Znajdujesz się w magazynie broni długodystansowej. Obecnie w użyciu masz "
                 f"{self.weapons_long_distance_in_use.name}.\n")
-            print(f"Obecnie posiadasz następującą broń długodystansową w magazynie:")
+            print("Obecnie posiadasz następującą broń długodystansową w magazynie:")
             for arg in self.weapons_long_distance_warehouse.values():
                 print(f"{arg.name} - siła dalekiego dystansu: {arg.strenght_long} - wytrzymałość: {arg.stamina} - "
                       f"cena: {arg.price}")
-            print(f"cofnij - wróć do menadżera postaci\n")
+            print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą broń chcesz założyć\n")
             print()
             if charakter_manager_2 in self.weapons_long_distance_warehouse.keys():
@@ -101,16 +101,16 @@ class UserGladiator(Gladiator):
             elif charakter_manager_2 == "cofnij":
                 break
             else:
-                print(f"Nie posiadasz takiej broni w magazynie")
+                print("Nie posiadasz takiej broni w magazynie")
                 continue
 
     def choice_helment(self):
         while True:
             print(f"Znajdujesz się w magazynie hełmów. Obecnie w użyciu masz {self.helmet_in_use.name}.\n")
-            print(f"Obecnie posiadasz następujące hełmy w magazynie:")
+            print("Obecnie posiadasz następujące hełmy w magazynie:")
             for arg in self.helmet_warehouse.values():
                 print(f"{arg.name} - defensywa: {arg.defence} - wytrzymałość: {arg.stamina} - cena: {arg.price}")
-            print(f"cofnij - wróć do menadżera postaci\n")
+            print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz który hełm chcesz założyć\n")
             print()
             if charakter_manager_2 in self.helmet_warehouse.keys():
@@ -127,16 +127,16 @@ class UserGladiator(Gladiator):
             elif charakter_manager_2 == "cofnij":
                 break
             else:
-                print(f"Nie posiadasz takiego hełmu w magazynie")
+                print("Nie posiadasz takiego hełmu w magazynie")
                 continue
 
     def choice_armor(self):
         while True:
             print(f"Znajdujesz się w magazynie zbroi. Obecnie w użyciu masz {self.armor_in_use.name}.\n")
-            print(f"Obecnie posiadasz następujące zbroje w magazynie:")
+            print("Obecnie posiadasz następujące zbroje w magazynie:")
             for arg in self.armor_warehouse.values():
                 print(f"{arg.name} - defensywa: {arg.defence} - wytrzymałość: {arg.stamina} - cena: {arg.price}")
-            print(f"cofnij - wróć do menadżera postaci\n")
+            print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą zbroję chcesz założyć\n")
             print()
             if charakter_manager_2 in self.armor_warehouse.keys():
@@ -153,16 +153,16 @@ class UserGladiator(Gladiator):
             elif charakter_manager_2 == "cofnij":
                 break
             else:
-                print(f"Nie posiadasz takiej zbroi w magazynie")
+                print("Nie posiadasz takiej zbroi w magazynie")
                 continue
 
     def choice_shield(self):
         while True:
             print(f"Znajdujesz się w magazynie tarcz. Obecnie w użyciu masz {self.shield_in_use.name}.\n")
-            print(f"Obecnie posiadasz następujące tarcze w magazynie:")
+            print("Obecnie posiadasz następujące tarcze w magazynie:")
             for arg in self.shield_warehouse.values():
                 print(f"{arg.name} - defensywa: {arg.defence} - wytrzymałość: {arg.stamina} - cena: {arg.price}")
-            print(f"cofnij - wróć do menadżera postaci\n")
+            print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą tarczę chcesz założyć\n")
             print()
             if charakter_manager_2 in self.shield_warehouse.keys():
@@ -179,21 +179,21 @@ class UserGladiator(Gladiator):
             elif charakter_manager_2 == "cofnij":
                 break
             else:
-                print(f"Nie posiadasz takiej tarczy w magazynie")
+                print("Nie posiadasz takiej tarczy w magazynie")
                 continue
 
     def charakter_manager(self):
         while True:
-            print(f"Znajdujesz się w menadżerze postaci. Wybierz co chcesz zrobić:\n"
-                  f"1. Sprawdź ilość złota\n"
-                  f"2. Sprawdź swoje umiejętności\n"
-                  f"3. Sprawdź swoje założone uzbrojenie\n"
-                  f"4. Wybierz broń krótkodystansową\n"
-                  f"5. Wybierz broń długodystansową\n"
-                  f"6. Wybierz hełm\n"
-                  f"7. Wybierz zbroję\n"
-                  f"8. Wybierz tarczę\n"
-                  f"9. Wyjdź z menadżera postaci\n")
+            print("Znajdujesz się w menadżerze postaci. Wybierz co chcesz zrobić:\n"
+                  "1. Sprawdź ilość złota\n"
+                  "2. Sprawdź swoje umiejętności\n"
+                  "3. Sprawdź swoje założone uzbrojenie\n"
+                  "4. Wybierz broń krótkodystansową\n"
+                  "5. Wybierz broń długodystansową\n"
+                  "6. Wybierz hełm\n"
+                  "7. Wybierz zbroję\n"
+                  "8. Wybierz tarczę\n"
+                  "9. Wyjdź z menadżera postaci\n")
             character_manager_1 = int(input())
             print()
             if character_manager_1 == 1:
@@ -215,7 +215,7 @@ class UserGladiator(Gladiator):
             elif character_manager_1 == 9:
                 break
             else:
-                print(f"Wybrałeś nieprawidłową wartość. Wpisz poprawną!")
+                print("Wybrałeś nieprawidłową wartość. Wpisz poprawną!")
                 continue
 
 

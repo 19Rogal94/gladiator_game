@@ -1,0 +1,4 @@
+venv/*
+.idea/*
+Uwagi.txt
+__pycache__/*

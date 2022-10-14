@@ -2,8 +2,8 @@ from main_folder.class_gladiator import UserGladiator
 
 
 def welcome_text():
-    print(f"Witaj nieznajomy, mam dla ciebie dobrą i złą wiadomość. Ale zanim przejdę do rzeczy, powiedz jak się "
-          f"nazywasz?")
+    print("Witaj nieznajomy, mam dla ciebie dobrą i złą wiadomość. Ale zanim przejdę do rzeczy, powiedz jak się "
+          "nazywasz?")
 
 
 def first_fight_text(gladiator: UserGladiator):
@@ -19,9 +19,9 @@ def start_text(gladiator: UserGladiator):
           f"coraz silniejsi. No więc właśnie teraz zaczyna się twoja gladiatorska przygoda. \n"
           f"Powodzenia! Przyda się")
     print("...")
-    print(f"Na sam początek rozdysponuj swoje umiejętności. Do rozdysponowania masz 7 umiejętności w następujących \n"
-          f"umiejętnościach: siła, wytrzymałość, technika walki na krótkim dystansie, technika walki na dalekim "
-          f"dystansie, uniki\n")
+    print("Na sam początek rozdysponuj swoje umiejętności. Do rozdysponowania masz 7 umiejętności w następujących \n"
+          "umiejętnościach: siła, wytrzymałość, technika walki na krótkim dystansie, technika walki na dalekim "
+          "dystansie, uniki\n")
 
 
 def after_2_opponent_text_1(gladiator: UserGladiator):
@@ -31,7 +31,7 @@ def after_2_opponent_text_1(gladiator: UserGladiator):
 
 
 def after_2_opponent_text_2():
-    print(f"\nWracasz teraz do placu głównego. Przygotuj się do następnej walki!\n")
+    print("\nWracasz teraz do placu głównego. Przygotuj się do następnej walki!\n")
 
 
 def after_3_opponent_text_1(gladiator: UserGladiator):
@@ -41,7 +41,7 @@ def after_3_opponent_text_1(gladiator: UserGladiator):
 
 
 def after_3_opponent_text_2():
-    print(f"\nCoś czuję, że na placu głównym fani nie dadzą Ci spokoju. Ale musisz na niego wrócić.\n")
+    print("\nCoś czuję, że na placu głównym fani nie dadzą Ci spokoju. Ale musisz na niego wrócić.\n")
 
 
 def after_4_opponent_text_1(gladiator: UserGladiator):
@@ -51,7 +51,7 @@ def after_4_opponent_text_1(gladiator: UserGladiator):
 
 
 def after_4_opponent_text_2():
-    print(f"\nMiejmy nadzieję, że już ostatni raz wracasz na ten plac...\n")
+    print("\nMiejmy nadzieję, że już ostatni raz wracasz na ten plac...\n")
 
 
 def end_text(gladiator: UserGladiator):
