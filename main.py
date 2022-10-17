@@ -1,10 +1,10 @@
 from main_folder import texts
-from main_folder.class_gladiator import UserGladiator
-from main_folder.new_skills_function import new_skills_choice
-from main_folder.fight_function import fight
-from main_folder.fight_result_function import result_1_fight
-from main_folder.main_squere_function import main_squere
-from main_folder import opponent
+from main_folder.classes_gladiator.class_user_gladiator import UserGladiator
+from main_folder.classes_gladiator.opponent_object import opponent
+from main_folder.fight.fight import fight
+from main_folder.fight.fight_result_function import result_1_fight
+from main_folder.main_squere.main_squere_function import main_squere
+from main_folder.new_skills_function.new_skills_function import new_skills_choice
 
 
 texts.welcome_text()

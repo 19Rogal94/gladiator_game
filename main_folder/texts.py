@@ -1,4 +1,4 @@
-from main_folder.class_gladiator import UserGladiator
+from main_folder.classes_gladiator.class_user_gladiator import UserGladiator
 
 
 def welcome_text():
