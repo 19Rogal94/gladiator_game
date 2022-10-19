@@ -9,7 +9,7 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator) -> str:
     gladiator.health_in_fight = 100
     gladiator.stamina_in_fight = gladiator.stamina * 50
 
-    opponent.health_in_fight = 10
+    opponent.health_in_fight = 100
     opponent.stamina_in_fight = opponent.stamina * 50
 
     distance_list = ["_", "_", "Y", "_", "_", "_", "_", "O", "_", "_"]
