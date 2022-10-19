@@ -14,8 +14,8 @@ user_gladiator = UserGladiator(user_name)
 
 texts.start_text(gladiator=user_gladiator)
 
-new_skill: int = 7
-new_skills_choice(skill_point=new_skill, gladiator=user_gladiator)
+user_gladiator.new_skill = 7
+new_skills_choice(gladiator=user_gladiator)
 
 print()
 
@@ -34,9 +34,8 @@ main_squere(gladiator=user_gladiator,
             )
 
 texts.after_2_opponent_text_1(gladiator=user_gladiator)
-user_gladiator.gold += 750
-new_skill += 3
-new_skills_choice(skill_point=new_skill, gladiator=user_gladiator)
+user_gladiator.win_the_fight(opponent=opponent.level_2_opponent)
+new_skills_choice(gladiator=user_gladiator)
 texts.after_2_opponent_text_2()
 
 main_squere(gladiator=user_gladiator,
@@ -47,9 +46,8 @@ main_squere(gladiator=user_gladiator,
             )
 
 texts.after_3_opponent_text_1(gladiator=user_gladiator)
-user_gladiator.gold += 1000
-new_skill += 3
-new_skills_choice(skill_point=new_skill, gladiator=user_gladiator)
+user_gladiator.win_the_fight(opponent=opponent.level_3_opponent)
+new_skills_choice(gladiator=user_gladiator)
 texts.after_3_opponent_text_2()
 
 main_squere(gladiator=user_gladiator,
@@ -60,9 +58,8 @@ main_squere(gladiator=user_gladiator,
             )
 
 texts.after_4_opponent_text_1(gladiator=user_gladiator)
-user_gladiator.gold += 1250
-new_skill += 3
-new_skills_choice(skill_point=new_skill, gladiator=user_gladiator)
+user_gladiator.win_the_fight(opponent=opponent.level_4_opponent)
+new_skills_choice(gladiator=user_gladiator)
 texts.after_4_opponent_text_2()
 
 main_squere(gladiator=user_gladiator,

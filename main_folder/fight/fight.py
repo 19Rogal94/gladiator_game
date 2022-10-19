@@ -9,7 +9,7 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator) -> str:
     gladiator.health_in_fight = 100
     gladiator.stamina_in_fight = gladiator.stamina * 50
 
-    opponent.health_in_fight = 100
+    opponent.health_in_fight = 10
     opponent.stamina_in_fight = opponent.stamina * 50
 
     distance_list = ["_", "_", "Y", "_", "_", "_", "_", "O", "_", "_"]
@@ -59,11 +59,11 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator) -> str:
                 if users_distance > 1:
                     figth_user_variable = random.randint(1, 15)
                     figth_opponent_variable = random.randint(1, 15)
-                    user_attack_chance = gladiator.technik_long_distanse_fight / figth_user_variable
+                    user_attack_chance = gladiator.technik_long_distance_fight / figth_user_variable
                     opponent_defence = opponent.defence / figth_opponent_variable
 
                     if user_attack_chance >= opponent_defence:
-                        opponent.health_in_fight -= gladiator.strenght_long * attack_multiplier
+                        opponent.health_in_fight -= gladiator.strength_long * attack_multiplier
                         print("Udany atak z dystansu!")
                     else:
                         print("Przeciwnikowi udało się uniknąć ataku!")
@@ -71,11 +71,11 @@ def fight(gladiator: UserGladiator, opponent: OpponentGladiator) -> str:
                 else:
                     figth_user_variable = random.randint(1, 15)
                     figth_opponent_variable = random.randint(1, 15)
-                    user_attack_chance = gladiator.technik_short_distanse_fight / figth_user_variable
+                    user_attack_chance = gladiator.technik_short_distance_fight / figth_user_variable
                     opponent_defence = opponent.defence / figth_opponent_variable
 
                     if user_attack_chance >= opponent_defence:
-                        opponent.health_in_fight -= gladiator.strenght * attack_multiplier
+                        opponent.health_in_fight -= gladiator.strength * attack_multiplier
                         print("Udany atak!")
                     else:
                         print("Przeciwnikowi udało się uniknąć ataku!")

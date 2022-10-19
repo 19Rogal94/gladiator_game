@@ -30,18 +30,18 @@ def opponent_tour(opponent: OpponentGladiator, distance_list, gladiator: UserGla
             fight_user_variable_op = random.randint(1, 15)
             fight_opponent_variable_op = random.randint(1, 10)
             if user_distance > 1:
-                opponent_attack_chance = opponent.technik_long_distanse_fight / fight_opponent_variable_op
+                opponent_attack_chance = opponent.technik_long_distance_fight / fight_opponent_variable_op
                 user_defence = gladiator.defence / fight_user_variable_op
                 if opponent_attack_chance >= user_defence:
-                    gladiator.health_in_fight -= opponent.strenght_long * attack_multiplier_op
+                    gladiator.health_in_fight -= opponent.strength_long * attack_multiplier_op
                     print("Przeciwnik przeprowadził udany atak z dystansu na Ciebie!")
                 else:
                     print("Uniknąłeś ataku przeciwnika")
             else:
-                opponent_attack_chance = opponent.technik_short_distanse_fight / fight_opponent_variable_op
+                opponent_attack_chance = opponent.technik_short_distance_fight / fight_opponent_variable_op
                 user_defence = gladiator.defence / fight_user_variable_op
                 if opponent_attack_chance >= user_defence:
-                    gladiator.health_in_fight -= opponent.strenght * attack_multiplier_op
+                    gladiator.health_in_fight -= opponent.strength * attack_multiplier_op
                     print("Przeciwnik przeprowadził udany atak na Ciebie!")
                 else:
                     print("Uniknąłeś ataku przeciwnika")

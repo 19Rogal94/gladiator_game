@@ -18,7 +18,7 @@ def weapon_shop(gladiator: UserGladiator) -> None:
             while True:
                 print("Oto dostępna broń krótkodystansowa:\n")
                 for arg in weapon_short_distance_list:
-                    print(f"{arg.name} \t-\t siła: {arg.strenght} \t-\t wytrzymałość: {arg.stamina} \t-\t "
+                    print(f"{arg.name} \t-\t siła: {arg.strength} \t-\t wytrzymałość: {arg.stamina} \t-\t "
                           f"cena: {arg.price}")
                 print("cofnij - wróć do sklepu\n")
                 weapon_shop_action_2 = input("Podaj nazwę broni, którą chcesz kupić\n").capitalize()
@@ -39,7 +39,7 @@ def weapon_shop(gladiator: UserGladiator) -> None:
             print("Oto dostępna broń długodystansowa:\n")
             while True:
                 for arg in weapon_long_distance_list:
-                    print(f"{arg.name} \t-\t siła: {arg.strenght} \t-\t wytrzymałość: {arg.stamina} \t-\t "
+                    print(f"{arg.name} \t-\t siła: {arg.strength} \t-\t wytrzymałość: {arg.stamina} \t-\t "
                           f"cena: {arg.price}")
                 print("cofnij - wróć do sklepu\n")
                 weapon_shop_action_2 = input("Podaj nazwę broni, którą chcesz kupić\n").capitalize()

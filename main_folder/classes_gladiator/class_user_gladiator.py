@@ -1,32 +1,34 @@
 import math
+from .class_opponent_gladiator import OpponentGladiator
 from .core import Gladiator
 from ..equipment.equipment_items import armors, helmets, long_distance_weapons, shields, short_distance_weapons
 
 
 class UserGladiator(Gladiator):
-    def __init__(self, username, strenght=1, strenght_long=1, stamina=1, technik_short_distanse_fight=1,
-                 technik_long_distanse_fight=1, defence=1):
-        super().__init__(strenght, strenght_long, stamina, technik_short_distanse_fight,
-                         technik_long_distanse_fight, defence)
+    def __init__(self, username, strength=1, strength_long=1, stamina=1, technik_short_distance_fight=1,
+                 technik_long_distance_fight=1, defence=1):
+        super().__init__(strength, strength_long, stamina, technik_short_distance_fight,
+                         technik_long_distance_fight, defence)
         self.username = username
         self.gold: int = 0
         self.weapons_short_distance_warehouse = {"Pięści": short_distance_weapons.piesci}
-        self.weapons_long_distance_warehouse = {"Kamienie": long_distance_weapons.kamienie}
+        self.weapons_long_distance_warehouse = {"Kamienie": long_distance_weapons.stones}
         self.helmet_warehouse = {}
         self.armor_warehouse = {}
         self.shield_warehouse = {}
         self.weapons_short_distance_in_use = short_distance_weapons.piesci
-        self.weapons_long_distance_in_use = long_distance_weapons.kamienie
-        self.helmet_in_use = helmets.brak_helmu
-        self.armor_in_use = armors.brak_zbroi
-        self.shield_in_use = shields.brak_tarczy
+        self.weapons_long_distance_in_use = long_distance_weapons.stones
+        self.helmet_in_use = helmets.no_helmet
+        self.armor_in_use = armors.no_armor
+        self.shield_in_use = shields.no_shield
+        self.new_skill = 0
 
     def gladiator_skills(self) -> None:
-        print(f"{self.username}, Twoje umiejętności wyglądają następująco: \nSiła: {self.strenght} \n"
-              f"Siła w walce na dystans: {self.strenght_long} \n"
+        print(f"{self.username}, Twoje umiejętności wyglądają następująco: \nSiła: {self.strength} \n"
+              f"Siła w walce na dystans: {self.strength_long} \n"
               f"Wytrzymałość: {self.stamina} \n"
-              f"Technika walki na krótkim dystansie: {self.technik_short_distanse_fight} \n"
-              f"Technika walki na długim dystansie: {self.technik_long_distanse_fight} \n"
+              f"Technika walki na krótkim dystansie: {self.technik_short_distance_fight} \n"
+              f"Technika walki na długim dystansie: {self.technik_long_distance_fight} \n"
               f"Uniki: {self.defence} \n")
 
     def gladiator_gold(self) -> None:
@@ -46,7 +48,7 @@ class UserGladiator(Gladiator):
                   f"{self.weapons_short_distance_in_use.name}.\n")
             print("Obecnie posiadasz następującą broń któtkodystansową w magazynie:")
             for arg in self.weapons_short_distance_warehouse.values():
-                print(f"{arg.name} - siła: {arg.strenght} - wytrzymałość: "
+                print(f"{arg.name} - siła: {arg.strength} - wytrzymałość: "
                       f"{arg.stamina} - cena: {arg.price}")
             print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą broń chcesz założyć\n")
@@ -57,10 +59,10 @@ class UserGladiator(Gladiator):
                     print("Niestety, nie masz wystarczającej wytrzymałości, aby założyć ten przedmiot")
                 else:
                     print(f"Pomyślnie założyłeś {self.weapons_short_distance_warehouse[charakter_manager_2].name}")
-                    self.strenght -= self.weapons_short_distance_in_use.strenght
+                    self.strength -= self.weapons_short_distance_in_use.strength
                     self.stamina -= self.weapons_short_distance_in_use.stamina
                     self.weapons_short_distance_in_use = self.weapons_short_distance_warehouse[charakter_manager_2]
-                    self.strenght += self.weapons_short_distance_warehouse[charakter_manager_2].strenght
+                    self.strength += self.weapons_short_distance_warehouse[charakter_manager_2].strength
                     self.stamina += self.weapons_short_distance_warehouse[charakter_manager_2].stamina
                     print()
             elif charakter_manager_2 == "Cofnij":
@@ -76,7 +78,7 @@ class UserGladiator(Gladiator):
                 f"{self.weapons_long_distance_in_use.name}.\n")
             print("Obecnie posiadasz następującą broń długodystansową w magazynie:")
             for arg in self.weapons_long_distance_warehouse.values():
-                print(f"{arg.name} - siła dalekiego dystansu: {arg.strenght_long} - wytrzymałość: {arg.stamina} - "
+                print(f"{arg.name} - siła dalekiego dystansu: {arg.strength_long} - wytrzymałość: {arg.stamina} - "
                       f"cena: {arg.price}")
             print("cofnij - wróć do menadżera postaci\n")
             charakter_manager_2 = input("Wybierz którą broń chcesz założyć\n")
@@ -85,9 +87,9 @@ class UserGladiator(Gladiator):
             if charakter_manager_2 in self.weapons_long_distance_warehouse.keys():
                 print(f"Pomyślnie założyłeś "
                       f"{self.weapons_long_distance_warehouse[charakter_manager_2].name}")
-                self.strenght_long -= self.weapons_long_distance_in_use.strenght_long
+                self.strength_long -= self.weapons_long_distance_in_use.strength_long
                 self.weapons_long_distance_in_use = self.weapons_long_distance_warehouse[charakter_manager_2]
-                self.strenght_long += self.weapons_long_distance_warehouse[charakter_manager_2].strenght_long
+                self.strength_long += self.weapons_long_distance_warehouse[charakter_manager_2].strength_long
                 print()
             elif charakter_manager_2 == "Cofnij":
                 break
@@ -188,26 +190,30 @@ class UserGladiator(Gladiator):
                   "7. Wybierz zbroję\n"
                   "8. Wybierz tarczę\n"
                   "9. Wyjdź z menadżera postaci\n")
-            character_manager_1 = int(input())
+            character_manager_1 = input()
             print()
-            if character_manager_1 == 1:
+            if character_manager_1 == "1":
                 self.gladiator_gold()
-            elif character_manager_1 == 2:
+            elif character_manager_1 == "2":
                 self.gladiator_skills()
-            elif character_manager_1 == 3:
+            elif character_manager_1 == "3":
                 self.gladiator_equipment_in_use()
-            elif character_manager_1 == 4:
+            elif character_manager_1 == "4":
                 self.choice_short_distance_weapon()
-            elif character_manager_1 == 5:
+            elif character_manager_1 == "5":
                 self.choice_long_distance_weapon()
-            elif character_manager_1 == 6:
+            elif character_manager_1 == "6":
                 self.choice_helmet()
-            elif character_manager_1 == 7:
+            elif character_manager_1 == "7":
                 self.choice_armor()
-            elif character_manager_1 == 8:
+            elif character_manager_1 == "8":
                 self.choice_shield()
-            elif character_manager_1 == 9:
+            elif character_manager_1 == "9":
                 break
             else:
                 print("Wybrałeś nieprawidłową wartość. Wpisz poprawną!")
                 continue
+
+    def win_the_fight(self, opponent: OpponentGladiator):
+        self.new_skill = opponent.new_skill
+        self.gold += opponent.gold

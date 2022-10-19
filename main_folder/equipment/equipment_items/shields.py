@@ -2,19 +2,19 @@ from ..classes_equipment.class_shield import Shield
 
 
 "Shield"
-brak_tarczy = Shield(name="Nic", defence=0, stamina=0, price=0)
-drewniana_tarcza = Shield(name="Drewniana tarcza", defence=2, stamina=-1, price=100)
-wzmocniona_drewniana_tarcza = Shield(name="Wzmocniona drewniana tarcza", defence=4, stamina=-1,
-                                     price=200)
-zelazna_tarcza = Shield(name="Żelazna tarcza", defence=8, stamina=-2, price=300)
-stalowa_tarcza = Shield(name="Stalowa tarcza", defence=11, stamina=-2, price=400)
-mistrzowska_tarcza = Shield(name="Mistrzowska tarcza", defence=15, stamina=-3, price=500)
+no_shield = Shield(name="Nic", defence=0, stamina=0, price=0)
+wooden_shield = Shield(name="Drewniana tarcza", defence=2, stamina=-1, price=100)
+reinforced_wooden_shield = Shield(name="Wzmocniona drewniana tarcza", defence=4, stamina=-1,
+                                  price=200)
+iron_shield = Shield(name="Żelazna tarcza", defence=8, stamina=-2, price=300)
+steel_shield = Shield(name="Stalowa tarcza", defence=11, stamina=-2, price=400)
+master_shield = Shield(name="Mistrzowska tarcza", defence=15, stamina=-3, price=500)
 
 "Shields list"
 shield_list = [
-    drewniana_tarcza,
-    wzmocniona_drewniana_tarcza,
-    zelazna_tarcza,
-    stalowa_tarcza,
-    mistrzowska_tarcza
+    wooden_shield,
+    reinforced_wooden_shield,
+    iron_shield,
+    steel_shield,
+    master_shield
 ]

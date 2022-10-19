@@ -2,7 +2,7 @@ from main_folder.classes_gladiator.class_user_gladiator import UserGladiator
 
 
 def increase_strength(gladiator: UserGladiator) -> None:
-    gladiator.strenght += 1
+    gladiator.strength += 1
     print("Dodano 1 do siły")
 
 
@@ -12,12 +12,12 @@ def increase_stamina(gladiator: UserGladiator) -> None:
 
 
 def increase_technik_short_distance_fight(gladiator: UserGladiator) -> None:
-    gladiator.technik_short_distanse_fight += 1
+    gladiator.technik_short_distance_fight += 1
     print("Dodano 1 do techniki walki na krótkie dystanse")
 
 
 def increase_technik_long_distance_fight(gladiator: UserGladiator) -> None:
-    gladiator.technik_long_distanse_fight += 1
+    gladiator.technik_long_distance_fight += 1
     print("Dodano 1 do techniki walki na długim dystanse")
 
 

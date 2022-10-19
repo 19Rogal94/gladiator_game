@@ -1,4 +1,5 @@
 from main_folder.classes_gladiator.class_user_gladiator import UserGladiator
+from main_folder.classes_gladiator.opponent_object import opponent
 
 
 def welcome_text():
@@ -26,8 +27,8 @@ def start_text(gladiator: UserGladiator):
 
 def after_2_opponent_text_1(gladiator: UserGladiator):
     print(f"Gratuluje {gladiator.username}! Pokonałeś już swojego drugiego przeciwnika i jesteś coraz bliższy "
-          f"odzyskania wolności. Oczywiście w nagrodę za wygraną walkę otrzymujesz 750 złota oraz możesz rozdysponować "
-          f"swoje 3 nowe umiejętności.\n")
+          f"odzyskania wolności. Oczywiście w nagrodę za wygraną walkę otrzymujesz {opponent.level_2_opponent.gold} "
+          f"złota oraz możesz rozdysponować swoje {opponent.level_2_opponent.new_skill} nowe umiejętności.\n")
 
 
 def after_2_opponent_text_2():
@@ -37,7 +38,8 @@ def after_2_opponent_text_2():
 def after_3_opponent_text_1(gladiator: UserGladiator):
     print(f"{gladiator.username} ta walka była niesamowita. Coraz więcej ludzi chce przychodzić na twoje walki! "
           f"Zostało ci już dwóch oponentów do pokonania, jednak już nie będzie tak łatwo jak do tej pory. Trenuj "
-          f"ciężko i nie poddawaj się! za tą wygraną otrzymujesz 1000 złota oraz kolejne 3 nowe umiejętności.\n")
+          f"ciężko i nie poddawaj się! za tą wygraną otrzymujesz {opponent.level_3_opponent.gold} złota oraz kolejne "
+          f"{opponent.level_3_opponent.new_skill} nowe umiejętności.\n")
 
 
 def after_3_opponent_text_2():
@@ -47,7 +49,8 @@ def after_3_opponent_text_2():
 def after_4_opponent_text_1(gladiator: UserGladiator):
     print(f"To był twój przedostatni główny przeciwnik. Chyba na długo zapamięta tą walkę. Skup się została już "
           f"tylko jedna walka. {gladiator.username} dzieli cię już tylko krok od wolności i wieczej chwały. "
-          f"Za tą walkę otrzymujesz 1250 złota i 3 nowe umiejętności.\n")
+          f"Za tą walkę otrzymujesz {opponent.level_4_opponent.gold} złota i {opponent.level_4_opponent.new_skill} "
+          f"nowe umiejętności.\n")
 
 
 def after_4_opponent_text_2():
